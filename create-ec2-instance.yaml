@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: A sample template to create an instance.
+Resources:
+    TestEC2:
+        Type: AWS::EC2::Instance
+        Properties:
+            ImageId: ami-013f17f36f8b1fefb
+            InstanceType: t2.medium
+            KeyName: cc_dev
+            SecurityGroupIds:
+                - sg-0a50d68e406fedbd6
