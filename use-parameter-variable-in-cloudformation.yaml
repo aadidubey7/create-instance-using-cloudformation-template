@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "A sample template to create an instance."
+Parameters:
+    AMIImageId:
+        Description: Specified AMI Id.
+        Type: String
+        Default: ami-013f17f36f8b1fefb
+        AllowedValues:
+            - ami-013f17f36f8b1fefb
+
+    SecurityGroupId:
+        Description: Allowed security group for instance.
+        Type: String
+        Default: sg-0a50d68e406fedbd6
+        AllowedValues:
+            - sg-0a50d68e406fedbd6
+        
+    SSHKeyName:
+        Description: Defined SSH key name.
+        Type: String
+        Default: cc_dev
+
+Resources:
+    TestEC2:
+        Type: AWS::EC2::Instance
+        Properties:
+            ImageId: !Ref AMIImageId
+            InstanceType: t2.medium
+            KeyName: !Ref SSHKeyName
+            SecurityGroupIds:
+                - !Ref SecurityGroupId
+            Tags:
+                -
+                    Key: Name
+                    Value: test-cc-dev
