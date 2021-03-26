@@ -8,3 +8,4 @@ A sample template to create an instance using cloudformation template.
 
 # File2
 - A sample template to use parameter variable in the resources section.
+- Refer use-parameter-variable-in-cloudformation.yaml
